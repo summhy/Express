@@ -24,11 +24,14 @@ app.get("/Contacto", (req, res) => {
   res.json(json);
 });
 
+app.get("/Contacto/:nombre", (req, res) => {
+  const nombre = req.params.nombre;
+  res.send(nombre);
+});
+
 app.get("/sendFile", (req, res) => {
     res.sendFile(path.join(__dirname+'/index.html'))
 });
-
-
 
 app.listen(3000, () => {
   console.log("Levantado puerto 3000");
